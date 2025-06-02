@@ -1,0 +1,31 @@
+<script>
+    
+let n;
+let input;
+let angka;
+let m;
+alert("program unutk mengecek bilangan prima atau bukan 🤫 klik enter untuk melanjutkan");
+input = prompt("tolong dinput angkanya kak:👇");
+angka = parseInt(input);
+n = Math.floor(Math.sqrt(angka));
+if(angka <= 1) {
+    alert(`${angka} bukan bilangan prima nih kak🙅`);
+
+}else{
+for(let i = 2; i <= n; i++){//pengecekan
+    m = angka % i;
+    if(m === 0){
+        break;
+    }
+}if (m === 0){
+    alert(`${angka} bukan bilangan prima nih kak🙅`);
+}else{
+    alert(`yep ${angka} ini bilangan prima kaka 👍`);
+}
+}
+/*kode ini ada bug tapi tetap benar, jika nilai angka yang dimasukan 2 maka n-nya akan diisi dengan 1 dimana
+loop for akan bernilai false dan berhenti dimana perulangan loop tidak terjadi dan langsung ke kondisi if dan mengecek variabel m yang
+awalnya belum diisi (undefined) maka nilainya menjadi false yang akan ke kondisi else ADALAH bilangan prima, padahal 
+looping pengecekannya belum terjadi, so it was a luck not a logic men, hahahahah but still apriciate*/ 
+//fendry 30/05/2025
+</script>
