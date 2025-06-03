@@ -8,7 +8,7 @@
     let keluar = true ;            
 
     do{
-    option = prompt(`\n                              ===MENU PRODUK DISTRO==\n\n1. Lihat Produk\n2. Tambah produk\n3. Perbaharui produk\n4. Hapus produk\n5. Keluar\n\nMasukan nomor menu:`);
+    option = prompt(`\n                              ===MENU PRODUK DISTRO===\n\n1. Lihat Produk\n2. Tambah produk\n3. Perbaharui produk\n4. Hapus produk\n5. Keluar\n\nMasukan nomor menu:`);
    
     if(parseInt(option) === 1){
         alert(lihatProduk());        
@@ -40,7 +40,7 @@
 
     function lihatProduk(){
         let print = "";
-        print += `Daftar Produk :\n\n`;
+        print += `\nDaftar Produk :\n\n`;
         for(let i = 0; i < daftarProduk.length; i++){
             print += `${i + 1}. ${daftarProduk[i]}\n`;
         }
@@ -50,26 +50,26 @@
     function tambahProduk(){
     
         let print = "";
-        let tambah = prompt(`${lihatProduk()}\nMasukan nama produk yang ingin ditambahkan:`);
+        let tambah = prompt(`\n                                 ===Tambah Produk===\n${lihatProduk()}\nMasukan nama produk yang ingin ditambahkan:`);
         daftarProduk.push(tambah);
-        print += `${lihatProduk()}\nProduk "${tambah}" berhasil ditambahkan `;
+        print += `\n                                 ===Tambah Produk===\n${lihatProduk()}\nProduk "${tambah}" berhasil ditambahkan `;
         
         return print;
     }
 
     function PerbaharuiProduk(){
-        let option = parseInt(prompt(`${lihatProduk()}\nMasukan nomor produk yang ingin diperbaharui:`));
-        let print = `"${daftarProduk[option-1]}" `;
+        let option = parseInt(prompt(`\n                                 ===Perbaharui Produk===\n${lihatProduk()}\nMasukan nomor produk yang ingin diperbaharui:`));
+        let print = `\n                                 ===Perbaharui Produk===\n\n"${daftarProduk[option-1]}"`;
         daftarProduk.splice(option-1,1,"");
-        let namaBaru = prompt(`${lihatProduk()}\nMasukan Nama Produk:`);
+        let namaBaru = prompt(`\n                                 ===Perbaharui Produk===\n${lihatProduk()}\nMasukan Nama Produk:`);
         daftarProduk.splice(option-1,1,namaBaru);
-        print += `telah diperbaharui menjadi "${namaBaru}"\n\n${lihatProduk()}`;
+        print += ` telah diperbaharui menjadi "${namaBaru}"\n${lihatProduk()}`;
         return print;
     }
 
     function hapusProduk(){
-        let option = parseInt(prompt(`${lihatProduk()}\nMasukan nomor produk yang ingin dihapus:`));
-        let print = `"${daftarProduk[option-1]}" telah dihapus! dari list\n\n`;
+        let option = parseInt(prompt(`\n                                 ===Hapus Produk===\n${lihatProduk()}\nMasukan nomor produk yang ingin dihapus:`));
+        let print = `\n                                 ===Hapus Produk===\n\n"${daftarProduk[option-1]}" telah dihapus! dari list\n`;
         daftarProduk.splice(option-1,1);
         print += `${lihatProduk()}`;
         return print;
