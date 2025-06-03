@@ -1,35 +1,46 @@
 <script>
 {
     //fento
-    
-    //deklarasi variabel yang diperlukan
+
+
     let daftarProduk = ["Kaos Polos Hitam","Hoddie Oversize","Jaket Varsity","Topi Snapback","Kemeja Flanel"];
     let option ;
-    let keluar ;
+    let keluar = true ;            
 
-
-    //tampilan menu user pertama untukk pilihan
     do{
-    option = parseInt(prompt("===MENU PRODUK DISTRO==\n\n1. Lihat Produk\n2. Tambah produk\n3. Perbaharui produk\n4. Hapus produk\n5. Keluar\n\nMasukan nomor menu:"));
-    let daftarProduk = ["Kaos Polos Hitam","Hoddie Oversize","Jaket Varsity","Topi Snapback","Kemeja Flanel"];
+    option = prompt(`\n                              ===MENU PRODUK DISTRO==\n\n1. Lihat Produk\n2. Tambah produk\n3. Perbaharui produk\n4. Hapus produk\n5. Keluar\n\nMasukan nomor menu:`);
+   
+    if(parseInt(option) === 1){
+        alert(lihatProduk());        
+    }else if(parseInt(option) === 2){
+         let loop ;
+        do{
+            alert(tambahProduk());
+            loop = prompt(`ingin Menambah Produk lagi?\nyes: y\nno: any key`);
+        }while(loop === "y")
+    }else if(parseInt(option) === 3){
+        let loop ;
+        do{
+            alert(PerbaharuiProduk());
+            loop = prompt(`ingin Memperbaharui Produk lagi?\nyes: y\nno: any key`);
+        }while(loop === "y")
+    }else if(parseInt(option) == 4){
+       let loop ;
+        do{
+            alert(hapusProduk());
+            loop = prompt(`ingin Menghapus Produk lagi?\nyes: y\nno: any key`);
+        }while(loop === "y")
+    }else if(isNaN(option)){
 
-    if(option === 1){
-        keluar = alert(lihatProduk());
-    }else if(option === 2){
-        keluar = alert(tambahProduk());
-    }else if(option === 3){
-        keluar = alert(PerbaharuiProduk());
-    }else if(option == 4){
-        keluar = alert(hapusProduk());
-    }else{
-        keluar = "ada";
+    }else if(parseInt(option) === 5 || option === null){
+        keluar = false;
     }
-    }while(keluar === undefined);
+    }while(keluar);           
 
 
-     function lihatProduk(){
+    function lihatProduk(){
         let print = "";
-        print += `Daftar Produk : \n\n`;
+        print += `Daftar Produk :\n\n`;
         for(let i = 0; i < daftarProduk.length; i++){
             print += `${i + 1}. ${daftarProduk[i]}\n`;
         }
@@ -37,28 +48,30 @@
     }
 
     function tambahProduk(){
+    
         let print = "";
-        let tambah = prompt(`${lihatProduk()} Masukan nama produk baru:\n`);
+        let tambah = prompt(`${lihatProduk()}\nMasukan nama produk yang ingin ditambahkan:`);
         daftarProduk.push(tambah);
-        print += `Produk ${tambah} berhasil ditambahkan 😉`;
+        print += `${lihatProduk()}\nProduk "${tambah}" berhasil ditambahkan `;
         
         return print;
     }
 
     function PerbaharuiProduk(){
-        let print = "";
-        let option = parseInt(prompt(`${lihatProduk()}Masukan nomor produk yang ingin diperbaharui:\n`));
-        let namaBaru = prompt("Masukan Nama:\n");
-        print = `${daftarProduk[option-1]} telah diperbaharui menjadi ${namaBaru}`;
+        let option = parseInt(prompt(`${lihatProduk()}\nMasukan nomor produk yang ingin diperbaharui:`));
+        let print = `"${daftarProduk[option-1]}" `;
+        daftarProduk.splice(option-1,1,"");
+        let namaBaru = prompt(`${lihatProduk()}\nMasukan Nama Produk:`);
         daftarProduk.splice(option-1,1,namaBaru);
+        print += `telah diperbaharui menjadi "${namaBaru}"\n\n${lihatProduk()}`;
         return print;
     }
 
     function hapusProduk(){
-        let print = "";
-        let option = parseInt(prompt(`${lihatProduk()}Masukan nomor produk yang ingin dihapus:\n`));
-        print = `${daftarProduk[option-1]} telah dihapus`;
+        let option = parseInt(prompt(`${lihatProduk()}\nMasukan nomor produk yang ingin dihapus:`));
+        let print = `"${daftarProduk[option-1]}" telah dihapus! dari list\n\n`;
         daftarProduk.splice(option-1,1);
+        print += `${lihatProduk()}`;
         return print;
     }
 }
