@@ -1,0 +1,65 @@
+<script>
+{
+    //fento
+    
+    //deklarasi variabel yang diperlukan
+    let daftarProduk = ["Kaos Polos Hitam","Hoddie Oversize","Jaket Varsity","Topi Snapback","Kemeja Flanel"];
+    let option ;
+    let keluar ;
+
+
+    //tampilan menu user pertama untukk pilihan
+    do{
+    option = parseInt(prompt("===MENU PRODUK DISTRO==\n\n1. Lihat Produk\n2. Tambah produk\n3. Perbaharui produk\n4. Hapus produk\n5. Keluar\n\nMasukan nomor menu:"));
+    let daftarProduk = ["Kaos Polos Hitam","Hoddie Oversize","Jaket Varsity","Topi Snapback","Kemeja Flanel"];
+
+    if(option === 1){
+        keluar = alert(lihatProduk());
+    }else if(option === 2){
+        keluar = alert(tambahProduk());
+    }else if(option === 3){
+        keluar = alert(PerbaharuiProduk());
+    }else if(option == 4){
+        keluar = alert(hapusProduk());
+    }else{
+        keluar = "ada";
+    }
+    }while(keluar === undefined);
+
+
+     function lihatProduk(){
+        let print = "";
+        print += `Daftar Produk : \n\n`;
+        for(let i = 0; i < daftarProduk.length; i++){
+            print += `${i + 1}. ${daftarProduk[i]}\n`;
+        }
+        return print; 
+    }
+
+    function tambahProduk(){
+        let print = "";
+        let tambah = prompt(`${lihatProduk()} Masukan nama produk baru:\n`);
+        daftarProduk.push(tambah);
+        print += `Produk ${tambah} berhasil ditambahkan 😉`;
+        
+        return print;
+    }
+
+    function PerbaharuiProduk(){
+        let print = "";
+        let option = parseInt(prompt(`${lihatProduk()}Masukan nomor produk yang ingin diperbaharui:\n`));
+        let namaBaru = prompt("Masukan Nama:\n");
+        print = `${daftarProduk[option-1]} telah diperbaharui menjadi ${namaBaru}`;
+        daftarProduk.splice(option-1,1,namaBaru);
+        return print;
+    }
+
+    function hapusProduk(){
+        let print = "";
+        let option = parseInt(prompt(`${lihatProduk()}Masukan nomor produk yang ingin dihapus:\n`));
+        print = `${daftarProduk[option-1]} telah dihapus`;
+        daftarProduk.splice(option-1,1);
+        return print;
+    }
+}
+</script>

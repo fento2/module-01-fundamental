@@ -49,7 +49,7 @@ console.log(daftarSiswa);
 //array.length : unutuk mengetahui banyaknya data didalam array
 console.log(daftarSiswa.length);
 
-//array.splice(pilihanIndex, jumlahDataYangDihapus, newData?) : menghapus, memperbaharui dab menyisipkan data baru pada index yang dipilih
+//array.splice(pilihanIndex, jumlahDataYangDihapus, newData?) : menghapus, memperbaharui dan menyisipkan data baru pada index yang dipilih
 daftarSiswa.splice(1, 1);
 console.log(daftarSiswa);
 

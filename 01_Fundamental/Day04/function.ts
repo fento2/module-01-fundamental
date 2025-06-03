@@ -27,7 +27,7 @@ console.log(hasil);
  */
 //membuat function
 function penjumlahan(){
-    let angkaA: number = 2;
+    let angkaA: number = 3;
     let angkaB: number = 5;
 
     const hasil : number = angkaA + angkaB;
