@@ -87,10 +87,10 @@
         const arr: number[] = [1, 2, 3, 4];
         let add: number = 7;
         function addelement() {
-            if(!arr.includes(add)){
+            if (!arr.includes(add)) {
                 arr.push(add);
                 return arr;
-            }else{
+            } else {
                 return arr;
             }
 
@@ -99,4 +99,27 @@
 
 
     }
+
+    {
+        // Write a function from a given array of mixed data types and return the sum of all the number
+        //a. Example : mixedArray = ["3", 1, "string", null, false, undefined, 2] → 3
+
+        const mixarray: any[] = ["3", 1, "string", null, false, undefined, 2];
+        let result: number = 0;
+        let print: string = "";
+        function sumMix() {
+            for (let i: number = 0; i < mixarray.length; i++) {
+                if (typeof mixarray[i] === "number") {
+                    result += mixarray[i];
+
+                }
+                
+            }
+            print += `array = [${mixarray}] → ${result}`
+            return print;
+        }
+        console.log(sumMix());
+
+    }
+
 }
