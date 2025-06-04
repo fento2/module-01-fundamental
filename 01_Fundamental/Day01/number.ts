@@ -33,7 +33,8 @@ console.log(Math.min(1, 2, 4, 3, -20));
 console.log(Math.max(1, 2, 4, 3, -20));
 
 //random
-console.log(Math.random())
+console.log(Math.random());
+
 
 //parsing data
 let price: number = 255000;
