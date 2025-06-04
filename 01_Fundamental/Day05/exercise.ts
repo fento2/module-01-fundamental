@@ -85,25 +85,18 @@
     //b. Example : arr = [1, 2, 3, 4], newElement = 7 → [1, 2, 3, 4, 7]
     {
         const arr: number[] = [1, 2, 3, 4];
-        let add: number = 4 ;
-        function addelement(){
-            for(let i: number = 0; i <arr.length; i++ ){
-                if(add !== arr[i]){
-                    break;
-                }else if (add == arr[i]){
-                    arr.push(add);
-                }
+        let add: number = 7;
+        function addelement() {
+            if(!arr.includes(add)){
+                arr.push(add);
+                return arr;
+            }else{
+                return arr;
             }
-            return arr;
-            
+
         }
         console.log(addelement());
 
 
-
-
-
     }
-
-
 }
