@@ -24,25 +24,28 @@
 
 
 }
+
+{
     //Write a function that takes an array of words and returns a string by concatenating the words in the array,
     //separated by commas and - the last word - by an 'and'.
     //a. Example : arr = ["apple", "banana", "cherry", "date"] → “apple,banana,cherry, and date”
 
     const findnumber: string[] = ["apple", "banana", "cherry", "date"];
     function sliceAnd() {
-    let result: string = `arr = [${findnumber}] → "`;
+        let result: string = `arr = [${findnumber}] → "`;
 
-    for (let i: number = 0; i < findnumber.length; i++) {
-        result += `${findnumber[i]},`;
-        if (i === findnumber.length - 1) {
-            result += ` and ${findnumber[i]}"`;
+        for (let i: number = 0; i < findnumber.length; i++) {
+            result += `${findnumber[i]},`;
+            if (i === findnumber.length - 1) {
+                result += ` and ${findnumber[i]}"`;
+            }
+
         }
+        return result;
 
     }
-    return result;
+    console.log(sliceAnd());
 }
-console.log(sliceAnd());
-
 
 {
     //Write a function from a given array of numbers and return the second smallest number
@@ -103,158 +106,18 @@ console.log(sliceAnd());
 }
 
 {
-    // Write a function from a given array of mixed data types and return the sum of all the number
-    //a. Example : mixedArray = ["3", 1, "string", null, false, undefined, 2] → 3
-
-    const mixarray: any[] = ["3", 1, "string", null, false, undefined, 2];
-    let print: string = "";
-    function sumMix() {
-        let result: number = 0;
-        for (let i: number = 0; i < mixarray.length; i++) {
-            if (typeof mixarray[i] === "number") {
-                result += mixarray[i];
-
-            }
-
-        }
-        print += `→ ${result}`;
-        return print;
-    }
-    console.log(sumMix());
-
-}
-
-{
-
-    // Write a function to insert multiple given integer (not an array) to an array and have a maximum size input. The
-    //array can only have a maximum size from a given input. (if the maximum size of the given input is 5 than the
-    //array can only contain 5 elements).
-    //a. Example :
-    //maxSize = 5, given integers is 5, 10, 24, 3, 6, 7, 8
-    //The function will return [5, 10, 24, 3, 6]
-
-    let maxSize: number = 5;
-    let input: string = "5, 10 ,24 ,3 ,6 ,7 ,8";
-    function giveIntegers() {
-        let result: number[] = [];
-        let input1: string[] = input.split(",");
-        for (let i: number = 0; i < maxSize; i++) {
-            result.push(parseInt(input1[i]));
-            if (i === input1.length - 1) {
-                break;
-            }
-        }
-        return result;
-    }
-    console.log(giveIntegers());
-
-}
-
-{
-    //Write a function that will combine 2 given array into one array
-    //b. Example : arr1 = [1, 2, 3], arr2 = [4, 5, 6] → [1, 2, 3, 4, 5, 6] 
-    const arr1: number[] = [1, 2, 3];
-    const arr2: number[] = [4, 5, 6];
-
-    function combineArray() {
-        arr1.push(...arr2);
-
-        return arr1;
-    }
-    console.log(combineArray());
-}
-
-{
-
-    //Write a function to find duplicate values in an array
-    //b. Example : arr = [1, 2, 2, 2, 3, 3, 4, 5, 5] → [2, 3, 5]
-/*
-    //version 1
-    const array: number[] = [1, 2, 2, 2, 3, 3, 4, 5, 5];
-
-    function findDuplicate(arr: number[] = []) {
-        let check1: number;
-        let check2: number;
-        let result: number[] = [];
-        for (let i: number = 0; i < arr.length; i++) {
-            let item: number = arr[i];
-            check1 = arr.indexOf(arr[i]);
-            check2 = arr.lastIndexOf(arr[i]);
-            if (check1 !== check2 && !result.includes(item)) {
-                result.push(arr[i]);
-            }
-        }
-        return result;
-
-    }
-    console.log(findDuplicate(array));
-*/
-
-    
-    //version 2
-    const array: number[] = [1, 2, 2, 2, 3, 3, 4, 5, 5];
-
-    function findDuplicate(findNumber: number[] = []) {
-        let check1: number;
-        let check2: number;
-        let result: number[] = [];
-        for (let i: number = 0; i < findNumber.length; i++) {
-            check1 = findNumber.indexOf(findNumber[i]);
-            check2 = findNumber.lastIndexOf(findNumber[i]);
-            if (check1 !== check2) {
-                result.push(findNumber[i]);
-            }
-        }
-        return result;
-
-    }
-    console.log(findDuplicate(array));
-
-}
-
-{
-
-    //Write a function to find the difference in 2 given array
-    //b. Example : arr1 = [1, 2, 3, 4, 5], arr2 = [3, 4, 5, 6, 7] → [1, 2, 6, 7] 
-    const arr1: number[] = [1, 2, 3, 4, 5];
-    const arr2: number[] = [3, 4, 5, 6, 7];
-
-    function diffArray() {
-        let check1: number;
-        let check2: number;
-        let result: number[] = [];
-        for (let i: number = 0; i < arr1.length + arr2.length; i++) {
-            let item1: number = arr1[i];
-            let item2: number = arr2[i];
-            if (!arr1[i] || !arr2[i]) {
-                break;
-            } else if (!arr1.includes(item2)) {
-                result.push(arr2[i]);
-
-            } else if (!arr2.includes(item1)) {
-                result.push(arr1[i]);
-            }
-        }
-        return result;
-    }
-    console.log(diffArray());
-}
-
-{
     //Based on the array below write a function that will return primitive data types only.
     //let arr = [1, [], undefined, {}, "string", {}, []];
     //a.The function will return [1, undefined, “string”]
 
-    //base on internet tipe data primif adalah: number, undifined, string, boolean, null, bignint dan symbol
+
     
     let arr: any = [1, [], undefined, {}, "string", {}, []];
     function primitiveDateOnly() {
         let result: any[] = [];
         for (let i: number = 0; i < arr.length; i++) {
             if (typeof arr[i] === "number" || typeof arr[i] === "undefined" ||
-                typeof arr[i] === "string" || typeof arr[i] === "boolean" || 
-                typeof arr[i] === null || typeof arr[i] === "bigint" ||
-                typeof arr[i] === "symbol") {
+                typeof arr[i] === "string" || typeof arr[i] === "boolean") {
                 result.push(arr[i]);
             }
         }
@@ -271,10 +134,10 @@ console.log(sliceAnd());
 
     let arr: number[] = [10, 20, 40, 10, 50, 30, 10, 60, 10];
 
-    function sumDuplicate(){
+    function sumDuplicate() {
         let result: number = 0;
-        let find: number [] = findDuplicate(arr);
-        for(let i: number = 0; i<find.length; i++){
+        let find: number[] = findDuplicate(arr);
+        for (let i: number = 0; i < find.length; i++) {
             result += find[i];
         }
         return result;
@@ -287,7 +150,7 @@ console.log(sliceAnd());
     //between rock, paper, or scissor.
     //a. Example: if you throw a rock as an argument and the function pick a scissor then it will return 'Win'
 
-    // contoh input = rock/paper/scissor
+    //contoh input = rock/paper/scissor
     const inputGame: string = "paper";
 
     function randomRPS() {
@@ -317,8 +180,8 @@ console.log(sliceAnd());
             } else if (random === 2) {
                 result = `👨🏻‍💻:✌️   ✊:🤖  (Robot Win)`;
             }
-        }else{
-            
+        } else {
+
         }
 
         return result;
