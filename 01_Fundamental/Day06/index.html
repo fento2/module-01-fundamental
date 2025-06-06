@@ -21,22 +21,22 @@
         let again;
         let displayWelcome = `------------------Welcome To Rock Paper Scissor Game------------------
                                     
-    🤖 : ${messageW[Math.floor(Math.random() * 4)]}
+🤖 : ${messageW[Math.floor(Math.random() * 4)]}
                                     
                                                         
         
                  
 
-    press enter to continue`;
+press enter to continue`;
         let displayInput = `----------------------------Rock Paper Scissor------------------------------
                                     
-                                    Player: 🧑‍💻         🤖 :Robot
+                                    Human: 🧑‍💻   VS     🤖 :Robot
                                     
                                     1.  Rock
                                     2.  Paper
                                     3.  Scissor        
 
-    please input your option (1-3);`;
+please input your option (1-3);`;
         alert(displayWelcome);
 
         do {
@@ -69,11 +69,11 @@ ${skor[2][0]} ${skor[2][1]}`;
 
             let displayOutput = `--------------------------Rock Paper Scissor-----------------------------
                                     
-                                    Player: 🧑‍💻         🤖 :Robot
+                                    Human: 🧑‍💻   VS     🤖 :Robot
                                     
-                                             ${user}              ${comp}
+                                             ${user}                   ${comp}
         
-                                                              ${result}        
+                                                                    ${result}        
 
 press ok to try again`;
             return displayOutput;
