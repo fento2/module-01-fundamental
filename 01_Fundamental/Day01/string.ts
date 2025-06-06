@@ -26,7 +26,7 @@ console.log(message.toLowerCase());
 //string.toUpperCase() : merubah semua karakter menjadi huruf besar
 console.log(message.toUpperCase());
 
-//string.includes() : memastikan suatu kata atau karakter ada didalam data string
+//string.includes() : memastikan suatu angka atau karakter ada didalam data string atau number
 console.log(message.includes("e"));
 console.log(message.includes("s"));
 

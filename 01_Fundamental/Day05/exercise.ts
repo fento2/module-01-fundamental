@@ -189,3 +189,4 @@
 
     console.log(randomRPS());
 }
+

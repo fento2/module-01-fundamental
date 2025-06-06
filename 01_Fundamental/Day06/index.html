@@ -1,0 +1,83 @@
+<script>
+    {
+
+        //exercise buat rock paper scissor vs robot
+
+        let skor = [
+            [`You Win =`, 0],
+            [`Draw =`, 0],
+            [`You Lose =`, 0]];
+        let emoji = ["✊", "🖐", "✌️"];
+        let messageL = ["am i boring to u, human?",
+            "alone again? hmm...",
+            "can't wait for round two!, human",
+            "GG! human"];
+        let messageW = ["ready to play? human",
+            "welcome to my world, human",
+            "wanna try me?",
+            "eyyo we met again"];
+        let inputUser;
+        let robot;
+        let again;
+        let displayWelcome = `------------------Welcome To Rock Paper Scissor Game------------------
+                                    
+    🤖 : ${messageW[Math.floor(Math.random() * 4)]}
+                                    
+                                                        
+        
+                 
+
+    press enter to continue`;
+        let displayInput = `----------------------------Rock Paper Scissor------------------------------
+                                    
+                                    Player: 🧑‍💻         🤖 :Robot
+                                    
+                                    1.  Rock
+                                    2.  Paper
+                                    3.  Scissor        
+
+    please input your option (1-3);`;
+        alert(displayWelcome);
+
+        do {
+            inputUser = parseInt(prompt(displayInput));
+            robot = Math.floor(Math.random() * 3);
+            again = true;
+            if (inputUser - 1 === robot) {
+                skor[1][1] += 1;
+                again = confirm(dOutput(emoji[inputUser - 1], emoji[robot], `Draw🤝 =  ${skor[1][1]}x`));
+            } else if ((inputUser - 1 === 0 && robot === 2) || (inputUser - 1 === 1 && robot === 0) || (inputUser - 1 === 2 && robot === 1)) {
+                skor[0][1] += 1;
+                again = confirm(dOutput(emoji[inputUser - 1], emoji[robot], `You Win👏 = ${skor[0][1]}x`));
+            } else if ((inputUser - 1 === 0 && robot === 1) || (inputUser - 1 === 1 && robot === 2) || (inputUser - 1 === 2 && robot == 0)) {
+                skor[2][1] += 1;
+                again = confirm(dOutput(emoji[inputUser - 1], emoji[robot], `You Lose👀 = ${skor[2][1]}x`));
+            }
+        } while (again)
+        let displayExit = `--------------------------Rock Paper Scissor------------------------------
+                                    
+🤖 : ${messageL[Math.floor(Math.random() * 4)]}                                                    
+                                            
+Final Score :
+${skor[0][0]} ${skor[0][1]}
+${skor[1][0]} ${skor[1][1]}
+${skor[2][0]} ${skor[2][1]}`;
+        alert(displayExit);
+
+
+        function dOutput(user, comp, result,) {
+
+            let displayOutput = `--------------------------Rock Paper Scissor-----------------------------
+                                    
+                                    Player: 🧑‍💻         🤖 :Robot
+                                    
+                                             ${user}              ${comp}
+        
+                                                              ${result}        
+
+press ok to try again`;
+            return displayOutput;
+        }
+
+    }
+</script>
