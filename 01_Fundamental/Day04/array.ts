@@ -50,7 +50,7 @@ console.log(daftarSiswa);
 console.log(daftarSiswa.length);
 
 //array.splice(pilihanIndex, jumlahDataYangDihapus, newData?) : menghapus, memperbaharui dan menyisipkan data baru pada index yang dipilih
-daftarSiswa.splice(1, 1);
+daftarSiswa.splice(1,1);
 console.log(daftarSiswa);
 
 //menyisipkan data

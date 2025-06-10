@@ -135,6 +135,7 @@ console.log(numberToCurrency);
 const angka: number[] = [1, 2, 3, 7, 20, 12];
 
 const angkaGenap: number[] = angka.filter((value, index) => {
+  
   return value % 2 === 0;
 });
 console.log(angkaGenap);
@@ -143,3 +144,35 @@ const angkaGanjil: number[] = angka.filter((value, index) => {
   return value % 2 !== 0;
 });
 console.log(angkaGanjil);
+
+
+
+{
+
+  // exercise buat callbackFn
+
+function filterAndTransform(arr, filterFn, transformFn) {
+  let result: number[] = [];
+  for(let i:number = 0; i<arr.length; i++){
+    if(filterFn(arr[i])){
+    result.push(transformFn(arr[i]));
+    }
+  }
+  return result;
+}
+
+const angka = [1, 2, 3, 4, 5, 6];
+
+const hasil = filterAndTransform(
+  angka,
+  (index) => index % 2 === 0,      // filter genap
+  (index) => index * 10            // kalikan dengan 10
+);
+
+console.log(hasil);
+
+
+}
+
+
+
