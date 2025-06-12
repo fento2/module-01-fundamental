@@ -1,4 +1,7 @@
-/**
+/**         //javascipt hanya bisa dijalankan di browser kalo mau jalan di computer pake v8 engine seperti node js
+ * 
+ *          //kondisi ? hasilJikaTrue : hasilJikaFalse; // tenari operator
+
  * Kisi-kisi exam modul 01:
  * - indroduction programing
  * - Data Type(primitive,non primitive)
@@ -7,7 +10,7 @@
  * - looping statement
  * - interface and object declaration
  * - function hoisting
- * - encapsulation
+ * - encapsulation              //menyembunyikan property object contoh private protected
  * - data structure
  * - big 0 notation
  */
