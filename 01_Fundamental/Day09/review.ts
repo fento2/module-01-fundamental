@@ -130,3 +130,122 @@ for (const value of listProduct) {
     console.log(value);
 }
 
+// array : tipe data yang mampu menampung berbagai macam tipe data lain
+/**
+ * ciri -ciri: - data yang disimpan didalam array akan dibungkus kurung siku, contoh :[1, 2, 3]
+ *             - setiap data yang disimpan dalam array ,akan memiliki alamat index yang dimulai dari 0
+ */
+
+const listNamaSiswa: string[] = ["Aldo", "Aldi"];
+
+interface ISiswa {
+    nis: string;
+    nama: string,
+    kelas: 'IPA' | "IPS";
+}
+const listSiswa: ISiswa[] = [{
+    nis: "0230223043",                  //angka kalau bukan unutk dihitung tidak perlu pakai tipe number
+    nama: "Aldo",
+    kelas: "IPS"
+},
+{
+    nis: "35345234354",                  //angka kalau bukan unutk dihitung tidak perlu pakai tipe number
+    nama: "Aldi",
+    kelas: "IPA"
+}
+];
+const stringObject = `${JSON.stringify(listSiswa[0])}`;
+console.log(`${JSON.stringify(listSiswa[0])}`);
+console.log(stringObject);
+console.log(JSON.parse(stringObject));
+
+//interface unutk yang pasti (sudah tau struktur datanya) / typeof unutk tipe data baru atau gabungan
+
+
+//Function : cara unutk menyatukan sekumpulan program unutk mneyelesaikan tugas khusus
+/**
+ * Kategori : Built-in function dan User-defined function
+ * atran penerapan function :
+ * - function harus tesedia leih dulu
+ * - penamaan function mengikuti aturan penamaan variable
+ * - secara opsional bisa menerima paramete/atau argumen: penampung data dari function unutk menerima data dari luar function
+ * - function secara opsional bisa menghasilkan output melalui keyword return didalamnnya
+ * - opsi penulisan function ada tiga : declarative function ,func.expression dan arraw function
+ * 
+ */
+
+
+
+/**
+ * Declarative function :                                   //PUNYA SIFAT FUNCTION HOISTING
+ * function namaFunction(parameter?, parameter?,...){
+ *          //code
+ * }
+ * 
+ */
+//contoh:
+function penjumlahan(): number {
+    let angkaA: number = 2;
+    let angkaB: number = 3;
+
+    const result: number = angkaA + angkaB;
+
+    return result;
+}
+console.log(penjumlahan());
+
+function penjumlahanB(angkaA: number, angkaB: number): number {
+    const result: number = angkaA + angkaB;
+    return result;
+}
+console.log(penjumlahanB(1, 3));
+console.log(penjumlahanB(3, 3));
+console.log(penjumlahanB(5, 3));
+
+/* function expression :
+* const namaFunction = function (parameter?, parameter?,...){
+*          //code
+* }
+* 
+*/
+//contoh:
+const pengurangan = function (): number {
+    let angkaA: number = 2;
+    let angkaB: number = 3;
+
+    const result: number = angkaA - angkaB;
+
+    return result;
+}
+
+console.log(pengurangan());
+
+const penguranganB = function (angkaA: number, angkaB: number): number {
+
+    const result: number = angkaA - angkaB;
+
+    return result;
+}
+console.log(penguranganB(5, 3));
+
+/* Arrow function:
+ * const namaFunction = (parameter?, parameter?,...) => {
+ *          //code
+ * }
+ * 
+ */
+//contoh:
+
+const perkalian = (): number => {
+    let angkaA: number = 10;
+    let angkaB: number = 20;
+
+    const result: number = angkaA * angkaB;
+
+    return result;
+}
+console.log(perkalian());
+
+const perkalianB = (angkaA: number, angkaB: number): number => angkaA * angkaB; //kalo ingin menyederhanakan penulisan tinggal hapus kurung kurawa{} beralaku khusus unutk arraw function
+
+console.log(perkalianB(5,6));
