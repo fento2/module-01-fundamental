@@ -310,4 +310,4 @@ motorcycle.riding()
 console.log('cek isi bensin setelah motor berjalan : ', motorcycle.checkFuel())
 console.log('mlipir ke pom bensin ...')
 motorcycle.refillFuel()
-console.log('setelah isi bensin : ', motorcycle.checkFuel())
+console.log('setelah isi bensin : ', motorcycle.checkFuel());

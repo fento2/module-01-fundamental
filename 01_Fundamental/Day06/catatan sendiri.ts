@@ -142,7 +142,7 @@
 }
 
 
-let test: string = "Minna";
+let test: string = "babad";
 
 // Mengambil substring dari index ke-0 sampai sebelum index ke-5
 // Index:  0 1 2 3 4
@@ -150,7 +150,7 @@ let test: string = "Minna";
 // Hasil: "babad"
 // cara pemakaian : string.substring(indexPertama, sebelum indexke-n);
 
-console.log(test.substring(0,5));
+console.log(test.substring(2,3));
 console.log(test.slice(0,1)+test.slice(2,5)); // kalu mau hapus  1 hurf pada 1 string
 
 

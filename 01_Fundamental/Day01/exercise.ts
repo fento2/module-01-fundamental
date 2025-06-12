@@ -36,12 +36,12 @@ console.log(diameter3,circumference,area);
 ○ Example : a = 80, b = 65
 ○ Output : 35*/
 //1. input data
-let a: number = 90;
-let b: number = 30;
+//let a: number = 90;
+//let b: number = 30;
 //2. pengoperasian
-const c: number = 180-(a+b);
+//const c: number = 180-(a+b);
 //3. menampilkan hasil
-console.log(c);
+//console.log(c);
 
 /*write a code to convert temperature from celsius to fahrenheit
 example:

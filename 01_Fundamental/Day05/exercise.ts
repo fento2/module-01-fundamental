@@ -132,17 +132,17 @@
     // letarr = [10, 20, 40, 10, 50, 30, 10, 60, 10];
     // a.The function will return 40
 
-    let arr: number[] = [10, 20, 40, 10, 50, 30, 10, 60, 10];
+    // let arr: number[] = [10, 20, 40, 10, 50, 30, 10, 60, 10];
 
-    function sumDuplicate() {
-        let result: number = 0;
-        let find: number[] = findDuplicate(arr);
-        for (let i: number = 0; i < find.length; i++) {
-            result += find[i];
-        }
-        return result;
-    }
-    console.log(sumDuplicate());
+    // function sumDuplicate() {
+    //     let result: number = 0;
+    //     let find: number[] = findDuplicate(arr);
+    //     for (let i: number = 0; i < find.length; i++) {
+    //         result += find[i];
+    //     }
+    //     return result;
+    // }
+    // console.log(sumDuplicate());
 }
 
 {

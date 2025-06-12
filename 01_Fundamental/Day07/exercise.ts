@@ -84,6 +84,8 @@ const calculator = new StudentStatsCalculator(listStudent);
 console.log(calculator.getStats());
 
 
+//versi sendiri
+
 // Exercise 2
 // ● Create a program to create transaction
 // ● Product Class
@@ -101,10 +103,7 @@ console.log(calculator.getStats());
 // ○ Checkout method → Finalize transaction, return transaction data
 
 
-
-
-
-class Product {
+class Product {                 //class product
     private name: string;
     private price: number;
 
@@ -122,14 +121,14 @@ class Product {
     }
 }
 
-interface CartItem {                    //interface unutk cetakan cartItem
+interface CartItem {                   
     product: Product; 
     qty: number;
 }
 
 class Transaction {                             //class unutk transaksi
-    private cartItems: CartItem[] = [];             //variabel cartItems tipe interfaceCartItem array buat nampung belanjaan
-    private totalAkhir: number = 0;                 //variabel totalAkhir buat nyimpan hasil kalkulasi belanjaan
+    private cartItems: CartItem[] = [];             //property cartItems tipe interfaceCartItem array buat nampung belanjaan
+    private totalAkhir: number = 0;                 //property totalAkhir buat nyimpan hasil kalkulasi belanjaan
 
     public cart(product: Product, qty: number) {        //method unutk cart 
         this.cartItems.push({ product, qty });
@@ -139,7 +138,7 @@ class Transaction {                             //class unutk transaksi
     public Checkout() {                                     //method unutk checkout
         const result: string = this.cartItems.map(value => {
             return `${value.product.getName()}-> ${value.qty} pcs`}).join(', ');
-        return `belanjaanmu: ${result}. total: Rp${this.totalAkhir.toLocaleString("id",{style: "currency",currency: "IDR",})}. Berhasil di-checkout.`;
+        return `belanjaanmu: ${result}. total: ${this.totalAkhir.toLocaleString("id",{style: "currency",currency: "IDR",})}. Berhasil di-checkout.`;
     }
 
     public displayTotal() {                                 //method unutk tampil total
@@ -150,17 +149,95 @@ class Transaction {                             //class unutk transaksi
 }
 
 
-const produk1 = new Product("Celana", 25000);
-const produk2 = new Product("Kaos", 30000);
-const produk3 = new Product("Kemeja", 10000);
+const produk1  = new Product("celana", 25000);
+const produk2  = new Product("kaos", 30000);
+const produk3  = new Product("sepatu", 10000);
 
 const transaction = new Transaction();
+
 transaction.cart(produk1, 2); 
-transaction.cart(produk2, 2);
 transaction.cart(produk3, 5);
 
 console.log(transaction.displayTotal()); 
-console.log(transaction.Checkout());     
+transaction.cart(produk2, 2);
+console.log(transaction.displayTotal());
+
+console.log(transaction.Checkout()); 
 
 
+{
+    
+    // exercise 2
 
+// data_transaction -> snake case
+// dataTransaction -> camel case
+// DataTransaction -> pascal case
+
+interface IProduct {
+    name: string,
+    price: number
+}
+
+interface ICartItem {
+    product: Product,
+    quantity: number
+}
+
+class Product implements IProduct {
+    name: string
+    price: number
+
+    constructor(name: string, price: number) {
+        this.name = name
+        this.price = price
+    }
+}
+
+class Transaction {
+    private cart: ICartItem[] = []
+
+    // tambah produk ke keranjang
+    public addToCart(product: Product, quantity: number) {
+        const existingItem = this.cart.find((item) => item.product.name === product.name)
+        if (existingItem) {
+            existingItem.quantity += quantity
+        } else {
+            this.cart.push({ product, quantity })
+        }
+    }
+
+    // show total
+    public showTotal() {
+        return this.cart.reduce((total, item) => total + item.product.price * item.quantity, 0)
+    }
+
+    // checkout dan kembalikan detail dari transaksi
+    public checkout() {
+        const total = this.showTotal()
+        const items = [...this.cart]
+
+        this.cart = []
+        return { items, total }
+    }
+}
+
+const product1 = new Product('Laptop', 1500)
+const product2 = new Product('Mouse', 50)
+const product3 = new Product('Keyboard', 100)
+
+const transaction = new Transaction()
+
+transaction.addToCart(product1, 1)
+transaction.addToCart(product2, 2)
+transaction.addToCart(product3, 1)
+
+console.log("Current Total : $", transaction.showTotal())
+
+const result = transaction.checkout()
+
+console.log("Transaction Summary :")
+result.items.forEach((item) => {
+    console.log(`${item.product.name} x ${item.quantity} = $ ${item.product.price * item.quantity}`)
+})
+console.log("Total: $ ", result.total)
+}
