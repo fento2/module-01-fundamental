@@ -25,7 +25,7 @@ interface IEmployee {
 
 class Employee {
 
-    employee: IEmployee;
+   protected employee: IEmployee;
     constructor(karyawan: IEmployee) {
         this.employee = karyawan;
     }
@@ -64,10 +64,12 @@ class Fulltime extends Employee {
         this.employee.waktuKeluar = keluar;
     }
     calculateSalary(): void {
-        this.employee.dailySalary = this.employee.dailyHour * 100000;
         if (this.employee.dailyHour > 6) {
+            this.employee.dailySalary += 6 * 100000;
             let sisa: number = this.employee.dailyHour - 6;
             this.employee.dailySalary += sisa * 75000;
+        }else{
+            this.employee.dailySalary = this.employee.dailyHour * 100000;
         }
     }
     getSalary() {
@@ -101,10 +103,12 @@ class Parttime extends Employee {
         this.employee.waktuKeluar = keluar;
     }
     calculateSalary(): void {
-        this.employee.dailySalary = this.employee.dailyHour * 50000;
         if (this.employee.dailyHour > 6) {
+            this.employee.dailySalary += 6 * 50000;
             let sisa: number = this.employee.dailyHour - 6;
             this.employee.dailySalary += sisa * 30000;
+        }else{
+            this.employee.dailySalary = this.employee.dailyHour * 50000;
         }
     }
     getSalary() {
@@ -121,7 +125,7 @@ class Parttime extends Employee {
 
 const lamine = new Fulltime("Lamine Yamal");
 
-lamine.addWorkingHours("09:00", "16:00");
+lamine.addWorkingHours("09:00", "15:00");
 console.log(lamine.working());
 lamine.calculateSalary();
 console.log(lamine.getSalary());

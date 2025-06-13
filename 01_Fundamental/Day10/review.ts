@@ -168,5 +168,87 @@
     console.log(isLive);
     console.log(gender);
 
+
+
+    /**
+ * 📚 OUTLINE STRUKTUR DATA DALAM TYPESCRIPT
+ * 
+ * ============================================
+ * ● 1. Data Structure (Struktur Data)
+ * --------------------------------------------
+ * Struktur Data adalah cara menyimpan dan mengatur data agar bisa digunakan secara efisien.
+ * Contohnya: Stack, Queue, Set, Map, Linked List, Tree, Graph, dll.
+ * 
+ * ============================================
+ * ● 2. Stack (Tumpukan)
+ * --------------------------------------------
+ * - Prinsip: LIFO (Last In, First Out)
+ * - Elemen terakhir yang dimasukkan, dikeluarkan pertama.
+ * - Operasi: push (masukkan), pop (keluarkan), peek (lihat atas).
+ * 
+ * Example:
+ *   const stack: number[] = [];
+ *   stack.push(10);
+ *   stack.pop(); // hapus 10
+ * 
+ * ============================================
+ * ● 3. Queue (Antrian)
+ * --------------------------------------------
+ * - Prinsip: FIFO (First In, First Out)
+ * - Elemen pertama yang masuk, akan keluar pertama juga.
+ * - Operasi: enqueue (masukkan ke belakang), dequeue (keluarkan dari depan).
+ * 
+ * Example:
+ *   const queue: number[] = [];
+ *   queue.push(1);          // enqueue
+ *   queue.shift();          // dequeue
+ * 
+ * ============================================
+ * ● 4. Set
+ * --------------------------------------------
+ * - Kumpulan nilai unik (tidak duplikat).
+ * - Otomatis buang duplikat jika disisipkan.
+ * 
+ * Example:
+ *   const mySet = new Set<number>();
+ *   mySet.add(1);
+ *   mySet.add(1); // tetap 1 item
+ * 
+ * ============================================
+ * ● 5. Hash Table / Map
+ * --------------------------------------------
+ * - Struktur key-value (mirip object, tapi bisa pakai tipe apapun sebagai key).
+ * - Cepat untuk pencarian berdasarkan key.
+ * 
+ * Example:
+ *   const myMap = new Map<string, number>();
+ *   myMap.set("apples", 10);
+ *   myMap.get("apples"); // 10
+ * 
+ * ============================================
+ * ● 6. Linked List
+ * --------------------------------------------
+ * - Kumpulan node, tiap node menyimpan nilai dan pointer ke node berikutnya.
+ * - Cocok untuk data dinamis, tapi akses acak lebih lambat dari array.
+ * 
+ * Example (structural):
+ *   class Node {
+ *     value: number;
+ *     next: Node | null;
+ *     constructor(value: number) {
+ *       this.value = value;
+ *       this.next = null;
+ *     }
+ *   }
+ * 
+ *   let head = new Node(1);
+ *   head.next = new Node(2);
+ * 
+ * ============================================
+ * 💡 Catatan:
+ * - Struktur data penting untuk efisiensi algoritma.
+ * - Pemilihan struktur yang tepat = performa maksimal!
+ */
+
     
 }

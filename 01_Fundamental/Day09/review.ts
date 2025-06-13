@@ -1,7 +1,49 @@
 /**         //javascipt hanya bisa dijalankan di browser kalo mau jalan di computer pake v8 engine seperti node js
  * 
  *          //kondisi ? hasilJikaTrue : hasilJikaFalse; // tenari operator
+ *          
+ *          //var function block-scoped
+ *          
+ *          //brute force: teknik nested loop
+ * algorithm
+// ● Linear Search
+// ● Binary Search
+// ● Jump Search
+// ● Interpolation Search
+// ● Exponential Search
+// ● Sublist Search (Search a linked list in another list)
+// ● Fibonacci Search
+// ● Etc
+
+big O notation
+/**
+ * Big O Notation
  * 
+ * Notasi Big O digunakan untuk mengukur kompleksitas algoritma, yaitu:
+ * - Seberapa cepat kode berjalan (Time Complexity)
+ * - Seberapa banyak memori yang digunakan (Space Complexity)
+ * 
+ * =============================
+ * NOTASI UMUM BIG O:
+ * 
+ * O(1)   -> Konstan
+ * - Waktu tetap, tidak tergantung ukuran input.
+ * - Contoh: akses langsung ke array.
+ * 
+ * O(n)   -> Linear
+ * - Waktu bertambah sebanding dengan jumlah input.
+ * - Contoh: loop satu kali pada array.
+ * 
+ * O(log n) -> Logaritmik
+ * - Input dibelah setiap langkah (divide and conquer).
+ * - Contoh: Binary Search.
+ * 
+ * O(n^2) -> Kuadratik
+ * - Nested loop, waktu naik drastis saat input besar.
+ * - Contoh: Bubble Sort, Selection Sort.
+ * 
+ * =============================
+ 
     setTimeout(() => {
 
     // kode yang mau dijalankan setelah delay
