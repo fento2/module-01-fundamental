@@ -29,7 +29,7 @@ class Employee {
     constructor(karyawan: IEmployee) {
         this.employee = karyawan;
     }
-    Working() {
+    working() {
         const w1: Date = new Date(`1970-01-01T${this.employee.waktuMasuk}:00`);
         const w2: Date = new Date(`1970-01-01T${this.employee.waktuKeluar}:00`);
 
@@ -64,9 +64,11 @@ class Fulltime extends Employee {
         this.employee.waktuKeluar = keluar;
     }
     calculateSalary(): void {
-        this.employee.dailySalary = this.employee.dailyHour <= 6
-            ? this.employee.dailyHour * 100000
-            : this.employee.dailyHour * 75000;
+        this.employee.dailySalary = this.employee.dailyHour * 100000;
+        if (this.employee.dailyHour > 6) {
+            let sisa: number = this.employee.dailyHour - 6;
+            this.employee.dailySalary += sisa * 75000;
+        }
     }
     getSalary() {
 
@@ -99,9 +101,11 @@ class Parttime extends Employee {
         this.employee.waktuKeluar = keluar;
     }
     calculateSalary(): void {
-        this.employee.dailySalary = this.employee.dailyHour <= 6
-            ? this.employee.dailyHour * 50000
-            : this.employee.dailyHour * 30000;
+        this.employee.dailySalary = this.employee.dailyHour * 50000;
+        if (this.employee.dailyHour > 6) {
+            let sisa: number = this.employee.dailyHour - 6;
+            this.employee.dailySalary += sisa * 30000;
+        }
     }
     getSalary() {
         const total: number = this.employee.dailySalary;
@@ -117,14 +121,15 @@ class Parttime extends Employee {
 
 const lamine = new Fulltime("Lamine Yamal");
 
-lamine.addWorkingHours("09:00", "15:00");
-console.log(lamine.Working());
+lamine.addWorkingHours("09:00", "16:00");
+console.log(lamine.working());
 lamine.calculateSalary();
 console.log(lamine.getSalary());
 
 const mbappe = new Parttime("Kylian Mbappe");
 
-mbappe.addWorkingHours("09:00", "20:30");
-console.log(mbappe.Working());
+mbappe.addWorkingHours("09:00", "15:00");
+console.log(mbappe.working());
 mbappe.calculateSalary();
 console.log(mbappe.getSalary());
+

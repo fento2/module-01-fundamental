@@ -75,12 +75,25 @@
 
 {
 
-    const Orang = [{ name: "antony", age: 20 }]
+    const Orang = [{ name: "antony", age: 20 }];
 
     function SwitchProperty(input: { name: string, age: number }[]) {
-        
-    
+        // Ubah array ke string JSON
+        const jsonString = JSON.stringify(input);
+
+        // Parse kembali agar bisa dimanipulasi
+        const parsed = JSON.parse(jsonString);
+
+        // Swap setiap properti
+        const swapped = parsed.map((obj: any) => ({
+            name: obj.age,
+            age: obj.name
+        }));
+
+        // Kembalikan hasil akhir sebagai JSON string
+        return JSON.stringify(swapped, null, 2);
     }
 
-    console.log(SwitchProperty(Orang))
+    console.log(SwitchProperty(Orang));
+
 }

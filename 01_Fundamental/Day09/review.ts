@@ -1,6 +1,13 @@
 /**         //javascipt hanya bisa dijalankan di browser kalo mau jalan di computer pake v8 engine seperti node js
  * 
  *          //kondisi ? hasilJikaTrue : hasilJikaFalse; // tenari operator
+ * 
+    setTimeout(() => {
+
+    // kode yang mau dijalankan setelah delay
+
+ }, delayDalamMs);
+
 
  * Kisi-kisi exam modul 01:
  * - indroduction programing
