@@ -1,0 +1,29 @@
+<script>
+    
+let n;
+let input;
+let angka;
+let m;
+let notPrime = false;
+
+alert("program unutk mengecek bilangan prima atau bukan 🤫 klik enter untuk melanjutkan");
+input = prompt("tolong dinput angkanya kak:👇");
+angka = parseInt(input);
+n = Math.floor(Math.sqrt(angka));
+if(angka <= 1 || isNaN(angka)){//isNaN
+    alert(`${angka} bukan bilangan prima nih kak🙅`);
+}else{
+for(let i = 2; i <= n; i++){
+    m = angka % i;
+    if(m === 0){
+        notPrime=true;
+      break;  
+    }
+}if (notPrime){
+    alert(`${angka} bukan bilangan prima nih kak🙅`);
+}else{
+    alert(`yep ${angka} bilangan prima kaka👍`);
+}
+}/*NaN tidak akan sama dengan angka apapun bahkan dengan NaN itu sendiri jadi hasilnya 
+selalu false jika pakai operator ===,jadi kita pakai fungsi isNaN untuk mengecek apakah variabel angka NaN atau bukan*/
+</script>
